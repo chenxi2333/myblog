@@ -6,15 +6,15 @@
   
   <title>树莓派项目 | 行香子.述怀</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="基于Motion的监控系统基于OpenCV的人脸识别">
+  <meta name="description" content="Chapter2 常用软件和服务 树莓派换源  基于Motion的监控  sudo motion开启 sudo killall -TERM motion关闭； 配置文件sudo vi &#x2F;etc&#x2F;motion&#x2F;motion.conf（回头等到硬盘到了把视频保存在硬盘里）   文件储存  FTP服务：安装vsftpd服务，启动。配置文件。（sudo或者修改一下权限） 12$ sudo apt inst">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树莓派项目">
 <meta property="og:url" content="https://chenxi2333.github.io/2022/09/19/%E6%A0%91%E8%8E%93%E6%B4%BE%E9%A1%B9%E7%9B%AE%E5%90%88%E9%9B%86/index.html">
 <meta property="og:site_name" content="行香子.述怀">
-<meta property="og:description" content="基于Motion的监控系统基于OpenCV的人脸识别">
+<meta property="og:description" content="Chapter2 常用软件和服务 树莓派换源  基于Motion的监控  sudo motion开启 sudo killall -TERM motion关闭； 配置文件sudo vi &#x2F;etc&#x2F;motion&#x2F;motion.conf（回头等到硬盘到了把视频保存在硬盘里）   文件储存  FTP服务：安装vsftpd服务，启动。配置文件。（sudo或者修改一下权限） 12$ sudo apt inst">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-19T09:40:45.000Z">
-<meta property="article:modified_time" content="2022-09-21T02:34:59.876Z">
+<meta property="article:modified_time" content="2022-10-11T13:36:20.028Z">
 <meta property="article:author" content="StoneAmber">
 <meta property="article:tag" content="项目">
 <meta name="twitter:card" content="summary">
@@ -100,11 +100,60 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="基于Motion的监控系统"><a href="#基于Motion的监控系统" class="headerlink" title="基于Motion的监控系统"></a>基于Motion的监控系统</h2><h2 id="基于OpenCV的人脸识别"><a href="#基于OpenCV的人脸识别" class="headerlink" title="基于OpenCV的人脸识别"></a>基于OpenCV的人脸识别</h2>
+        <h2 id="Chapter2-常用软件和服务"><a href="#Chapter2-常用软件和服务" class="headerlink" title="Chapter2 常用软件和服务"></a>Chapter2 常用软件和服务</h2><ol>
+<li><p>树莓派换源</p>
+</li>
+<li><p>基于Motion的监控</p>
+<ol>
+<li><code>sudo motion</code>开启</li>
+<li><code>sudo killall -TERM motion</code>关闭；</li>
+<li>配置文件<code>sudo vi /etc/motion/motion.conf</code>（回头等到硬盘到了把视频保存在硬盘里）</li>
+</ol>
+</li>
+<li><p>文件储存</p>
+<ol>
+<li><p>FTP服务：安装vsftpd服务，启动。配置文件。（sudo或者修改一下权限）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo apt install vsftpd</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo service vsftpd</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>开启xftp连接树莓派系统。可以直接在Windows上操作文件，很方便。</p>
+</li>
+</ol>
+</li>
+<li><p>文件共享</p>
+<ol>
+<li>安装并ntfs可以让旧的Linux系统识别到NTFS格式的硬盘。（新版的自带）</li>
+<li>安装Samba软件开启文件共享。<ol>
+<li>4b安装的时候版本会报错，需要先安装正确版本的库。</li>
+</ol>
+</li>
+<li>开启服务以后就可以正常访问树莓派的公共文件。可以在计算机-添加网络映射中永久性的挂载树莓派。</li>
+<li>暂时无法访问的原因是还没有挂载好硬盘（\media目录下）</li>
+</ol>
+</li>
+<li><p>Web相关服务</p>
+<ol>
+<li>安装nginx：轻量级的Web服务器，可以反向代理</li>
+<li>内网穿透：外网访问家里的局域网</li>
+<li>Aira2</li>
+<li>NTP时间服务</li>
+</ol>
+</li>
+<li><p>系统备份：全卡备份、压缩备份</p>
+</li>
+<li><p>MariaDB：数安装据库</p>
+</li>
+<li><p>dpkg服务是Debian的包管理软件</p>
+<ol>
+<li>kill 可以关闭进程。</li>
+<li>vim查找使用的是<code>/</code>，使用nN上下翻动。</li>
+</ol>
+</li>
+</ol>
+<h2 id="Chapter3-基于OpenCV的人脸识别"><a href="#Chapter3-基于OpenCV的人脸识别" class="headerlink" title="Chapter3 基于OpenCV的人脸识别"></a>Chapter3 基于OpenCV的人脸识别</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://chenxi2333.github.io/2022/09/19/%E6%A0%91%E8%8E%93%E6%B4%BE%E9%A1%B9%E7%9B%AE%E5%90%88%E9%9B%86/" data-id="cl92u0bg2000e20u60quehbaj" data-title="树莓派项目" class="article-share-link">分享</a>
+      <a data-url="https://chenxi2333.github.io/2022/09/19/%E6%A0%91%E8%8E%93%E6%B4%BE%E9%A1%B9%E7%9B%AE%E5%90%88%E9%9B%86/" data-id="cl9490f09000f0wu6edbdhcni" data-title="树莓派项目" class="article-share-link">分享</a>
       
       
       
