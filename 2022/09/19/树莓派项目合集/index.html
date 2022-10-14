@@ -14,7 +14,7 @@
 <meta property="og:description" content="Chapter2 常用软件和服务 树莓派换源  基于Motion的监控  sudo motion开启 sudo killall -TERM motion关闭； 配置文件sudo vi &#x2F;etc&#x2F;motion&#x2F;motion.conf（回头等到硬盘到了把视频保存在硬盘里）   文件储存  FTP服务：安装vsftpd服务，启动。配置文件。（sudo或者修改一下权限） 12$ sudo apt inst">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-19T09:40:45.000Z">
-<meta property="article:modified_time" content="2022-10-11T13:36:20.028Z">
+<meta property="article:modified_time" content="2022-10-14T03:29:36.206Z">
 <meta property="article:author" content="StoneAmber">
 <meta property="article:tag" content="项目">
 <meta name="twitter:card" content="summary">
@@ -149,7 +149,37 @@
 </ol>
 </li>
 </ol>
-<h2 id="Chapter3-基于OpenCV的人脸识别"><a href="#Chapter3-基于OpenCV的人脸识别" class="headerlink" title="Chapter3 基于OpenCV的人脸识别"></a>Chapter3 基于OpenCV的人脸识别</h2>
+<h2 id="Chapter3-基于OpenCV的人脸识别"><a href="#Chapter3-基于OpenCV的人脸识别" class="headerlink" title="Chapter3 基于OpenCV的人脸识别"></a>Chapter3 基于OpenCV的人脸识别</h2><h3 id="安装配置OpenCV"><a href="#安装配置OpenCV" class="headerlink" title="安装配置OpenCV"></a>安装配置OpenCV</h3><ol>
+<li><p>扩展TF卡。</p>
+</li>
+<li><p>安装开发工具、图像库（视频的相关暂时先不安装了）、GTK和GUI后端。</p>
+<ol>
+<li>过程中同样需要对一些包的版本进行重新安装。如果依赖很多可以使用<code>aptitude</code>代替<code>apt-get</code>。</li>
+<li>mv除了可以移动，也可以改名。</li>
+<li>OpenCV的安装需要下载之后解压缩</li>
+</ol>
+</li>
+<li><p>书上弄了虚拟环境</p>
+<ol>
+<li><p>不用虚拟环境的方法参照的是博客。[树莓派安装OpenCV完整过程](<a target="_blank" rel="noopener" href="https://www.cnblogs.com/shanwu369/p/10697216.html#:~:text=%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85OpenCV%E5%AE%8C%E6%95%B4%E8%BF%87%E7%A8%8B">https://www.cnblogs.com/shanwu369/p/10697216.html#:~:text=树莓派安装OpenCV完整过程</a>. 1. 配置并更新树莓派系统. sudo raspi-config %2F%2F 进入后打开摄像头、SSH sudo,sudo apt-get install build-essential cmake git pkg-config. 3.)</p>
+</li>
+<li><p>使用vim需要复制的化需要打入代码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">:set paste</span><br><span class="line">:set mouse=v</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建了一个名为cv的虚拟环境并在其中工作。可以看到开头出现了一个(cv)表明环境创建成功。</p>
+<ol>
+<li>使用<code>workon NAME</code>就可以打开虚拟环境</li>
+</ol>
+</li>
+<li><p>在虚拟环境中使用Cmake编译</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">cmake -D CMAKE_BUILD_TYPE=RELEASE \</span><br><span class="line">-D CMAKE_INSTALL_PREFIX=/usr/local \</span><br><span class="line">-D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \</span><br><span class="line">-D ENABLE_NEON=ON \</span><br><span class="line">-D ENABLE_VFPV3=ON \</span><br><span class="line">-D BUILD_TESTS=OFF \</span><br><span class="line">-D OPENCV_ENABLE_NONFREE=ON \</span><br><span class="line">-D INSTALL_PYTHON_EXAMPLES=OFF \</span><br><span class="line">-D CMAKE_SHARED_LINKER_FLAGS=-latomic \</span><br><span class="line">-D PYTHON3_EXECUTABLE=/usr/bin/python3.9 \</span><br><span class="line">-D PYTHON_INCLUDE_DIR=/usr/include/python3.9 \</span><br><span class="line">-D PYTHON_LIBRARY=/usr/lib/arm-linux-gnueabihf/libpython3.9.so \</span><br><span class="line">-D BUILD_EXAMPLES=OFF ..</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更改交换机的内存，重新启动一下交换机服务。之后开始编译很长时间。</p>
+</li>
+</ol>
+</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
