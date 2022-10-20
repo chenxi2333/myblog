@@ -6,15 +6,15 @@
   
   <title>树莓派项目 | 行香子.述怀</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Chapter2 常用软件和服务 树莓派换源  基于Motion的监控  sudo motion开启 sudo killall -TERM motion关闭； 配置文件sudo vi &#x2F;etc&#x2F;motion&#x2F;motion.conf（回头等到硬盘到了把视频保存在硬盘里）   文件储存  FTP服务：安装vsftpd服务，启动。配置文件。（sudo或者修改一下权限） 12$ sudo apt inst">
+  <meta name="description" content="Chapter2 常用软件和服务 默认只有vi没有vim，所以要先安装vim编辑器。  为了解决依赖问题，可以安装aptitude   树莓派换源  先用cp备份原来的源文件，然后编辑源文件。（保险，我直接改源文件&#x2F;etc&#x2F;apt&#x2F;sources.list） 64位系统的话需要增加一个公钥才能够正常使用。 需要提前查看自己树莓派的系统和架构版本之后才能够选择需要的镜像位置。   基于Motion的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树莓派项目">
 <meta property="og:url" content="https://chenxi2333.github.io/2022/09/19/%E6%A0%91%E8%8E%93%E6%B4%BE%E9%A1%B9%E7%9B%AE%E5%90%88%E9%9B%86/index.html">
 <meta property="og:site_name" content="行香子.述怀">
-<meta property="og:description" content="Chapter2 常用软件和服务 树莓派换源  基于Motion的监控  sudo motion开启 sudo killall -TERM motion关闭； 配置文件sudo vi &#x2F;etc&#x2F;motion&#x2F;motion.conf（回头等到硬盘到了把视频保存在硬盘里）   文件储存  FTP服务：安装vsftpd服务，启动。配置文件。（sudo或者修改一下权限） 12$ sudo apt inst">
+<meta property="og:description" content="Chapter2 常用软件和服务 默认只有vi没有vim，所以要先安装vim编辑器。  为了解决依赖问题，可以安装aptitude   树莓派换源  先用cp备份原来的源文件，然后编辑源文件。（保险，我直接改源文件&#x2F;etc&#x2F;apt&#x2F;sources.list） 64位系统的话需要增加一个公钥才能够正常使用。 需要提前查看自己树莓派的系统和架构版本之后才能够选择需要的镜像位置。   基于Motion的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-19T09:40:45.000Z">
-<meta property="article:modified_time" content="2022-10-14T03:29:36.206Z">
+<meta property="article:modified_time" content="2022-10-20T03:26:11.418Z">
 <meta property="article:author" content="StoneAmber">
 <meta property="article:tag" content="项目">
 <meta name="twitter:card" content="summary">
@@ -100,8 +100,18 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="Chapter2-常用软件和服务"><a href="#Chapter2-常用软件和服务" class="headerlink" title="Chapter2 常用软件和服务"></a>Chapter2 常用软件和服务</h2><ol>
+        <h2 id="Chapter2-常用软件和服务"><a href="#Chapter2-常用软件和服务" class="headerlink" title="Chapter2 常用软件和服务"></a>Chapter2 常用软件和服务</h2><ol start="0">
+<li><p>默认只有vi没有vim，所以要先安装vim编辑器。</p>
+<ol>
+<li>为了解决依赖问题，可以安装aptitude</li>
+</ol>
+</li>
 <li><p>树莓派换源</p>
+<ol>
+<li>先用cp备份原来的源文件，然后编辑源文件。（保险，我直接改源文件<code>/etc/apt/sources.list</code>）</li>
+<li>64位系统的话需要增加一个公钥才能够正常使用。</li>
+<li>需要提前查看自己树莓派的系统和架构版本之后才能够选择需要的镜像位置。</li>
+</ol>
 </li>
 <li><p>基于Motion的监控</p>
 <ol>
@@ -123,6 +133,7 @@
 <ol>
 <li>安装并ntfs可以让旧的Linux系统识别到NTFS格式的硬盘。（新版的自带）</li>
 <li>安装Samba软件开启文件共享。<ol>
+<li>Samba本质也是权限管理，在配置文件中添加用户组和权限设置，命令行添加用户之后就可以访问使用。</li>
 <li>4b安装的时候版本会报错，需要先安装正确版本的库。</li>
 </ol>
 </li>
@@ -147,6 +158,8 @@
 <li>kill 可以关闭进程。</li>
 <li>vim查找使用的是<code>/</code>，使用nN上下翻动。</li>
 </ol>
+</li>
+<li><p>MarinDB数据库</p>
 </li>
 </ol>
 <h2 id="Chapter3-基于OpenCV的人脸识别"><a href="#Chapter3-基于OpenCV的人脸识别" class="headerlink" title="Chapter3 基于OpenCV的人脸识别"></a>Chapter3 基于OpenCV的人脸识别</h2><h3 id="安装配置OpenCV"><a href="#安装配置OpenCV" class="headerlink" title="安装配置OpenCV"></a>安装配置OpenCV</h3><ol>
@@ -179,7 +192,18 @@
 </ol>
 </li>
 </ol>
-
+<h3 id="摄像头的使用"><a href="#摄像头的使用" class="headerlink" title="摄像头的使用"></a>摄像头的使用</h3><h3 id="图像基础操作"><a href="#图像基础操作" class="headerlink" title="图像基础操作"></a>图像基础操作</h3><h3 id="图像识别"><a href="#图像识别" class="headerlink" title="图像识别"></a>图像识别</h3><h2 id="Chapter5-8-硬件和传感器"><a href="#Chapter5-8-硬件和传感器" class="headerlink" title="Chapter5-8 硬件和传感器"></a>Chapter5-8 硬件和传感器</h2><h3 id="GPIO"><a href="#GPIO" class="headerlink" title="GPIO"></a>GPIO</h3><p>Python的RPi.GPIO库可以使用树莓派上的GPIO引脚。</p>
+<p>相关的通信协议需要下载相应的模块去使用</p>
+<h3 id="硬件控制"><a href="#硬件控制" class="headerlink" title="硬件控制"></a>硬件控制</h3><p>LED、蜂鸣器、时钟、GPS模块、供电设备、数字键盘、指纹识别、麦克风阵列</p>
+<h3 id="电机控制"><a href="#电机控制" class="headerlink" title="电机控制"></a>电机控制</h3><p>伺服电机：舵机，就是通过脉冲信号宽度旋转特定角度的电机。</p>
+<p>步进电机：单极和双极之分，区别在于后者拥有更大的扭矩，引线更多。</p>
+<h3 id="常用传感器"><a href="#常用传感器" class="headerlink" title="常用传感器"></a>常用传感器</h3><p>气体传感：二氧化碳、MQ系列（各种燃气的检测）</p>
+<p>温湿度：DHT11、气压传感器</p>
+<p>电阻式：热敏、光敏</p>
+<p>声波传感器：DO、AO、超声波</p>
+<p>光：光照强度、红外&#x2F;紫外、激光、颜色、火焰传感器</p>
+<p>力传感器：压力、震动、电子罗盘、角速度和加速度、霍尔传感器。</p>
+<h2 id="项目实战"><a href="#项目实战" class="headerlink" title="项目实战"></a>项目实战</h2><h3 id="物联网-基于Assisant的智能家居"><a href="#物联网-基于Assisant的智能家居" class="headerlink" title="物联网-基于Assisant的智能家居"></a>物联网-基于Assisant的智能家居</h3><h3 id="树莓派智能小车"><a href="#树莓派智能小车" class="headerlink" title="树莓派智能小车"></a>树莓派智能小车</h3>
       
     </div>
     <footer class="article-footer">
