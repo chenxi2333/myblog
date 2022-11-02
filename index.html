@@ -77,6 +77,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-计算机的江湖" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E6%B1%9F%E6%B9%96/" class="article-date">
+  <time class="dt-published" datetime="2022-11-02T03:09:55.000Z" itemprop="datePublished">2022-11-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E6%B1%9F%E6%B9%96/">计算机的江湖</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="计算机的江湖"><a href="#计算机的江湖" class="headerlink" title="计算机的江湖"></a>计算机的江湖</h2><p>之前知乎上看到过把不同种类的编程语言比作各大武林学派，来进行优劣比较的一个帖子，感觉很有意思。现在想想不如思维放宽，整个IT领域都可以当作是一个江湖。</p>
+<p>如果说编程语言是各种武功，那么内功对应的应该就是计算机通识的理解。内力高手，无论驾驭何种功夫都轻车熟路。内功的提升有一些武林秘籍，虽然这些秘籍公开，但是能够道清其中奥秘的人却寥寥。《算法导论》《CSAPP》这些秘籍，对于新手菜鸟而言望而却步不知所云，但是对于高手而言一点点一层层去掌握确实提升内功的绝佳途径。</p>
+<p>而如人工智能、图像处理这样的不同领域的问题，则更像是一处“秘境”，秘境中包含这机缘宝物，吸引着各派高手汇集其中，大展拳脚。</p>
+<p>各种开发工具和IDE，可以看作是程序员的神兵利器。倚天剑和屠龙刀在这里并不存在，或者说对于每一个人而言，倚天剑和屠龙刀各有不同，兵刃各有千秋，最重要的是趁手，相传高手能够用最简单的Vim或者文本编辑器施展武功绝学。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://chenxi2333.github.io/2022/11/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E6%B1%9F%E6%B9%96/" data-id="cl9z2tm8b0000zsu6dkvcfcth" data-title="计算机的江湖" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%84%9F%E6%82%9F/" rel="tag">感悟</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-AI-Learning" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/10/09/AI-Learning/" class="article-date">
@@ -567,19 +611,16 @@
         <h2 id="硬盘规划和树莓派信息"><a href="#硬盘规划和树莓派信息" class="headerlink" title="硬盘规划和树莓派信息"></a>硬盘规划和树莓派信息</h2><ol>
 <li>目前使用两张SD卡，64G的那张读存速度太慢了。</li>
 <li>16G的卡用来简单学习Linux，烧录的是Debain for RaspberryPi64位系统，用来学习OpenCV，练习写一些硬件驱动；128G的卡烧录了HomeAssistant系统，配合硬盘，未来主要作为生产力工具进行拓展开发。</li>
+<li>与电脑远程连接需要打开ssh功能。</li>
 </ol>
 <h2 id="常用软件和服务"><a href="#常用软件和服务" class="headerlink" title="常用软件和服务"></a>常用软件和服务</h2><ol start="0">
-<li><p>默认只有vi没有vim，所以要先安装vim编辑器。</p>
-<ol>
-<li>为了解决依赖问题，可以安装aptitude</li>
-</ol>
-</li>
 <li><p>树莓派换源</p>
 <ol>
-<li>先用cp备份原来的源文件，然后编辑源文件。（保险，我直接改源文件<code>/etc/apt/sources.list</code>）</li>
-<li>64位系统的话需要增加一个公钥才能够正常使用。</li>
-<li>需要提前查看自己树莓派的系统和架构版本之后才能够选择需要的镜像位置。</li>
+<li>sudo lsb_release -a查看版本和架构，去清华源上找应该复制什么。</li>
+<li>先用cp备份原来的源文件，然后编辑源文件。</li>
 </ol>
+</li>
+<li><p>安装vim</p>
 </li>
 <li><p>基于Motion的监控</p>
 <ol>
@@ -590,7 +631,7 @@
 </li>
 <li><p>文件储存</p>
 <ol>
-<li><p>FTP服务：安装vsftpd服务，启动。配置文件。（sudo或者修改一下权限）</p>
+<li><p>FTP服务：安装vsftpd服务，启动。配置文件。（sudo或者修改一下权限） </p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo apt install vsftpd</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo service vsftpd</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>开启xftp连接树莓派系统。可以直接在Windows上操作文件，很方便。</p>
@@ -631,7 +672,7 @@
 </li>
 </ol>
 <h2 id="计算机视觉-OpenCV"><a href="#计算机视觉-OpenCV" class="headerlink" title="计算机视觉-OpenCV"></a>计算机视觉-OpenCV</h2><h3 id="安装配置OpenCV"><a href="#安装配置OpenCV" class="headerlink" title="安装配置OpenCV"></a>安装配置OpenCV</h3><ol>
-<li><p>扩展TF卡。</p>
+<li><p>扩展TF卡。查看剩余容量:df -h</p>
 </li>
 <li><p>安装开发工具、图像库（视频的相关暂时先不安装了）、GTK和GUI后端。</p>
 <ol>
@@ -671,7 +712,13 @@
 <p>声波传感器：DO、AO、超声波</p>
 <p>光：光照强度、红外&#x2F;紫外、激光、颜色、火焰传感器</p>
 <p>力传感器：压力、震动、电子罗盘、角速度和加速度、霍尔传感器。</p>
-<h2 id="物联网-HomeAssistant"><a href="#物联网-HomeAssistant" class="headerlink" title="物联网-HomeAssistant"></a>物联网-HomeAssistant</h2>
+<h2 id="物联网-HomeAssistant"><a href="#物联网-HomeAssistant" class="headerlink" title="物联网-HomeAssistant"></a>物联网-HomeAssistant</h2><ol>
+<li>Samba</li>
+<li>Add-on 是HA并行其他运行软件的。底层机制是Docker</li>
+<li>集成：在HA中获得数据，显示状态。</li>
+<li>历史：HA是从Python的库发展而来的，最后演变成了一个HA系统。Core，Supervisor、OS三者独立。</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
@@ -702,7 +749,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA/" rel="tag">个人</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AB%9E%E8%B5%9B/" rel="tag">竞赛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE/" rel="tag">项目</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA/" rel="tag">个人</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%84%9F%E6%82%9F/" rel="tag">感悟</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AB%9E%E8%B5%9B/" rel="tag">竞赛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE/" rel="tag">项目</a></li></ul>
     </div>
   </div>
 
@@ -712,7 +759,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/%E4%B8%AA%E4%BA%BA/" style="font-size: 10px;">个人</a> <a href="/tags/%E7%AB%9E%E8%B5%9B/" style="font-size: 10px;">竞赛</a> <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 20px;">项目</a>
+      <a href="/tags/%E4%B8%AA%E4%BA%BA/" style="font-size: 10px;">个人</a> <a href="/tags/%E6%84%9F%E6%82%9F/" style="font-size: 10px;">感悟</a> <a href="/tags/%E7%AB%9E%E8%B5%9B/" style="font-size: 10px;">竞赛</a> <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 20px;">项目</a>
     </div>
   </div>
 
@@ -721,7 +768,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li></ul>
     </div>
   </div>
 
@@ -732,6 +779,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/11/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E6%B1%9F%E6%B9%96/">计算机的江湖</a>
+          </li>
         
           <li>
             <a href="/2022/10/09/AI-Learning/">AI Learning</a>
@@ -747,10 +798,6 @@
         
           <li>
             <a href="/2022/09/21/%E7%A0%94%E7%A9%B6%E7%94%9F%E5%88%9B%E6%96%B0%E6%AF%94%E8%B5%9B%E8%A7%84%E5%88%92%E8%B7%AF%E7%BA%BF/">研究生创新比赛规划路线</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/19/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%90%88%E9%9B%86/">开源硬件项目</a>
           </li>
         
       </ul>
